@@ -32,12 +32,12 @@ class Simulate:
         self.__canvas_width = turtle.screensize()[0]
         self.__canvas_height = turtle.screensize()[1]
     def simulating(self):
-        turtle.clear()
         for i in range(len(self.ball)):
             self.ball[i].draw_circle()
             self.ball[i].move_ball(self.__canvas_width,self.__canvas_height)
         turtle.update()
-        
+    def clean(self):
+         turtle.clear()       
 turtle.speed(0)
 turtle.tracer(0)
 turtle.hideturtle()
@@ -59,4 +59,5 @@ for i in range(num_ball):
 
 screen=Simulate(ball_list)
 while True:
+    screen.clean()
     screen.simulating()
